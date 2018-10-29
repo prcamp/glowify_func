@@ -185,7 +185,7 @@ function glowify_curves_on_grid(vert_curves::Curves, horz_curves::Curves, mat_wi
       end
     end # inner for
   end # outer for
-  (horz_planks,vert_planks,horz_cuts,vert_cuts)
+  (horz_planks,vert_planks)
 end
 
 function sample_grid_func(f::Function,Nvert::Int,Nhorz::Int,fsvert::Int, fshorz::Int,vert_min::Float64,vert_max::Float64,horz_min::Float64,horz_max::Float64)
