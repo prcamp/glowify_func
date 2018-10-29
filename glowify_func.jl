@@ -32,7 +32,7 @@ function glowify_curves_on_grid(vert_curves::Curves, horz_curves::Curves, mat_wi
   all_func_min = min(mapreduce(c -> miny(c),min,vert_curves),mapreduce(c -> miny(c), min, horz_curves))
 
   # scale the "y" coordinates of the curves by z_length, and shift by z_min:
-  scale_z(c::Curve) = map!(p -> Point(p.x, z_min + z_length*((p.y - all_func_min)/(all_func_max - all_func_min))),c)
+  scale_z(c::Curve) = map!(p -> Point(p.x, z_min + z_length*((p.y - all_func_min)/(all_func_max - all_func_min))),c,c)
 
   for c in vert_curves
     scale_z(c)
